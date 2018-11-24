@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <input type="text" placeholder="proporcione nombre" id="nombre" name="nombre" onkeyup="getnombre(this.value)">
+    <input type="text" placeholder="proporcione apellido paterno" id="a_apellido" name="a_apellido" onkeyup="getapaterno(this.value)">
+    <input type="text" placeholder="proporcione nombre materno" id="m_apellido" name="m_apellido" onkeyup="getamaterno(this.value)">
+    <input type="number" placeholder="proporcione dia de nacimiento" id="dia" name="dia" onkeyup="getdia(this.value)">
+    <input type="number" placeholder="proporcione mes de nacimiento" id="mes" name="mes" onkeyup="getmes(this.value)">
+    <input type="number" placeholder="proporcione año de nacimiento" id="anio" name="anio" onkeyup="getanio(this.value)">
+
+    <ul id="rfc">
+        <li id="rfc_ap_paterno"></li>
+        <li id="rfc_ap_materno"></li>
+        <li id="rfc_nombre"></li>
+        <li id="rfc_mes"></li>
+        <li id="rfc_anio"></li>
+        <li id="rfc_dia"></li>
+    </ul>
+    <script>
+        function getnombre(valor) {
+            if (valor.length == 1) {
+                str = valor[0];
+
+                document.getElementById("rfc_nombre").innerText = str;
+            }
+            if (valor.length < 1) {
+                str = "";
+
+                document.getElementById("rfc_nombre").innerText = str;
+            }
+        }
+
+        function getapaterno(valor) {
+            if (valor.length == 2) {
+                str = valor[0] + valor[1];
+
+                document.getElementById("rfc_ap_paterno").innerText = str;
+            }
+            if (valor.length < 2) {
+                str = "";
+
+                document.getElementById("rfc_ap_paterno").innerText = str;
+            }
+
+        }
+
+        function getamaterno(valor) {
+            if (valor.length == 1) {
+                str = valor[0];
+
+                document.getElementById("rfc_ap_materno").innerText = str;
+            }
+            if (valor.length < 1) {
+                str = "";
+
+                document.getElementById("rfc_ap_materno").innerText = str;
+            }
+
+        }
+
+        function getdia(valor) {
+
+        }
+
+        function getmes(valor) {
+
+        }
+
+        function getanio(valor) {
+
+        }
+    </script>
+    <style>
+        ul {
+            display: inline;
+            list-style: none;
+        }
+    </style>
+</body>
+
+</html>
