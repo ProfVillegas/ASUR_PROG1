@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script>
+        class circulo {
+            constructor(radio = 0) {
+                this._radio = radio;
+                this._pi = 3.1416;
+            }
+            set radio(value) {
+                this._radio = value;
+            }
+            get area() {
+                return this._pi * (this._radio * this._radio);
+            }
+            get perimetro() {
+                return 2 * this._pi * this._radio;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let circ1 = new circulo();
+        var rad = prompt("Proporcione radio", 0);
+        circ1.radio = parseFloat(rad);
+        alert(circ1.area);
+        alert(circ1.perimetro);
+    </script>
+</body>
+
+</html>

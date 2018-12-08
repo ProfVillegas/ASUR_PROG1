@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <script>
+        class persona {
+            constructor(nombre = 0, f_nac = 0) {
+                this._nombre = nombre;
+                this._f_nac = f_nac;
+            }
+
+            set nombre(value) {
+                this._nombre = "nombre: " + value;
+            }
+
+            set f_nac(value = 0) {
+                this._f_nac = "feha de nac.: " + value;
+            }
+
+            get datos() {
+                return this._nombre + this._f_nac;
+            }
+        }
+        class alumno extends persona {
+            constructor(grup = "ninguno", mat = "000000") {
+
+                super();
+                this._grupo = grup;
+                this._matricula = mat;
+            }
+            set grupo(value) {
+                this._grupo = value;
+            }
+            set matricula(value) {
+                this._matricula = value;
+            }
+            get datos() {
+                return "Matricula:" + this._matricula + super.datos + "Grupo:" + this._grupo;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let obj = new alumno();
+
+        obj.nombre = "Alberto Einstein";
+        obj.f_nac = "13/06/2001";
+        obj.matricula = "166";
+        obj.grupo = "IGS13";
+        alert(obj.datos);
+    </script>
+</body>
+
+</html>
