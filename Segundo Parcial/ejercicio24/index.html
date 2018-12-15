@@ -14,9 +14,12 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+    <script>
+    let objeto=null;
+    </script>
 </head>
 
-<body onload="main();">
+<body >
 
     <!-- Start your project here-->
     <!--Main Navigation-->
@@ -144,10 +147,8 @@
 
     <!-- SCRIPTS -->
     <script>
-        let objeto=null;
-        function main(){
-            let objeto= new persona();
-        }
+        
+        
         class persona {
             
             constructor(nombre = null, apellido = null, username = null ) {
@@ -170,10 +171,11 @@
             }
             
             get agregar() {
-                this.tabla.innerHTML='<tr><th se="row">1</th><td>Jose</td><td>Dominguez</td><td>@mdo</td></tr>';
+                this.tabla.innerHTML=this.tabla.innerHTML+'<tr><th se="row">1</th><td>Jose</td><td>Dominguez</td><td>@mdo</td></tr>';
                 return true;
             }
         }
+        objeto = new persona();
     </script>
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
