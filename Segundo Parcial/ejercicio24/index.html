@@ -16,7 +16,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="main();">
 
     <!-- Start your project here-->
     <!--Main Navigation-->
@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
           <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Sistema de inventarios</a>
 
           <!-- Collapse button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -67,7 +67,45 @@
     <!--Main layout-->
     <main>
         <div class="container">
-        
+        <!-- Material form login -->
+        <div class="card">
+            <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Agregar usuario</strong>
+              </h5>
+            <!--Card content-->
+              <div class="card-body px-lg-5 pt-0">
+
+                <!-- Form -->
+                <form class="text-center" style="color: #757575;">
+
+                  <!-- Nombre -->
+                  <div class="md-form">
+                    <input type="text" id="txtnombre" class="form-control">
+                    <label for="txtnombre">Nombre</label>
+                  </div>
+
+                  <!-- Apellidos -->
+                  <div class="md-form">
+                    <input type="text" id="txtapellido" class="form-control">
+                    <label for="txtapellido">Apellidos</label>
+                  </div>
+
+                  <!-- Username -->
+                  <div class="md-form">
+                    <input type="text" id="txtuser" class="form-control">
+                    <label for="txtuser">Username</label>
+                  </div>
+
+                  <!-- Boton para agregar -->
+                  <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button" onclick="objeto.agregar;">Agregar</button>
+
+                  
+                </form>
+                <!-- Form -->
+
+              </div>
+
+        </div>
         
         <!--Table-->
             <table id="tablePreview" class="table table-striped table-bordered table-hover">
@@ -82,7 +120,7 @@
               </thead>
               <!--Table head-->
               <!--Table body-->
-              <tbody>
+              <tbody id="personas">
                 <tr>
                   <th scope="row">1</th>
                   <td>Mark</td>
@@ -105,6 +143,38 @@
     <!-- /Start your project here-->
 
     <!-- SCRIPTS -->
+    <script>
+        let objeto=null;
+        function main(){
+            let objeto= new persona();
+        }
+        class persona {
+            
+            constructor(nombre = null, apellido = null, username = null ) {
+                this._nombre = nombre;
+                this._apellido = apellido;
+                this._username = username;
+                this.tabla=document.getElementById("personas");
+            }
+
+            set nombre(value) {
+                this._nombre = "nombre: " + value;
+            }
+
+            set apellido(value = 0) {
+                this._apellido = "apellido " + value;
+            }
+
+            set username(value = 0) {
+                this._username = "username " + value;
+            }
+            
+            get agregar() {
+                this.tabla.innerHTML='<tr><th se="row">1</th><td>Jose</td><td>Dominguez</td><td>@mdo</td></tr>';
+                return true;
+            }
+        }
+    </script>
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
